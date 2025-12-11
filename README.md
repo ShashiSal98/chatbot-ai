@@ -11,12 +11,12 @@ A modern web-based AI chatbot with a clean, responsive UI, real-time chat flow, 
 - ⚡ Smooth animations and transitions
 - 🎯 Context-aware responses
 
-## How to Use
+## How to Use (with ChatGPT)
 
-1. Simply open `index.html` in your web browser
-2. Start typing your messages in the input field
-3. Press Enter or click the send button to send messages
-4. The chatbot will respond to your messages
+1. Install deps: `npm install express cors node-fetch`
+2. Set your key: `set OPENAI_API_KEY=sk-...` (PowerShell: `$env:OPENAI_API_KEY="sk-..."`)
+3. Start server (serves the UI and proxies API): `node server.js`
+4. Visit `http://localhost:3000` and chat away
 
 ## Supported Topics
 

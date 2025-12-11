@@ -83,8 +83,26 @@ class Chatbot {
     }
 
     async getResponse(userMessage) {
-        // Simulate thinking time
-        await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
+        try {
+            const response = await fetch('http://localhost:3000/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMessage }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            if (data?.reply) {
+                return data.reply.trim();
+            }
+        } catch (error) {
+            console.error('Chat API failed, using fallback:', error);
+        }
+
+        // Fallback to local canned responses if API fails
         return this.findResponse(userMessage);
     }
 }
