@@ -1,4 +1,5 @@
 # AI Chatbot
+<img width="1867" height="925" alt="Screenshot 2025-12-11 133456" src="https://github.com/user-attachments/assets/d72313d5-e851-471c-9767-52069b03eda3" />
 
 A modern web-based AI chatbot with a clean, responsive UI, real-time chat flow, and status indicators for a polished user experience.
 
